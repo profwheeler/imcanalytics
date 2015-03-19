@@ -1,7 +1,18 @@
-<php>
+<?php>
+	if(isset($_POST['name'])) {
+	     
+	     $UNAME = ($_POST['name']);
+		 $GREETING = 'Welcome back $UNAME.';
+
+		 } else { 
+		 $GREETING = 'Welcome Guest. <a href="#" class="my_popup_open">Log on</a> for recommendations.'; 
+		 }
+		 
 </php>
+
 <html>
  <head>
+
  
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
  <script src="http://www.imcanalytics.com/js/jquery.popupoverlay.js"></script>
@@ -100,7 +111,7 @@
  <div style="margin-top:10px; margin-bottom:10px; font-size: 130%; color:#57585A;">
  <strong>Icculus Media: For All Your Fictional Needs</strong>
  </div>
- <div id="greeting"> Welcome Guest. <a href="#" class="my_popup_open">Log on</a> for recommendations.</div>
+ <div id="greeting"> $GREETING </div>
  <div id="cta1"> Please browse our options:</div>
  <section>
     <div id="one" style="padding:10px;">
