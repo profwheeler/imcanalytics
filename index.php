@@ -116,7 +116,7 @@
 </section>
 
 	<div id="my_popup" style = "background-color: white; display: none; padding: 20px;">
-    <form name="form0" action="#" method="post">
+    <form name="form1" action="#" method="post">
 	     <div>Please enter your name:</div>
 	
     <input name="input1" id="name" type="text" /><p>
