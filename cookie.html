@@ -4,14 +4,32 @@
 
 <script language="JavaScript">
 
+//TWO FUNCTIONS TO SET THE COOKIE
+
+function mixCookie() {
+
+ 	    var name = document.forms["form1"]["name"].value;
+
+        bakeCookie("readuser", name, 365);
+			
+   }
+   
+function bakeCookie(cname, cvalue1, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toGMTString();
+    document.cookie = cname + "=" + cvalue1 + ";" + expires;
+}
+
+//TWO FUNCTIONS TO GET THE COOKIE
+
 function checkCookie() {
 
-    var userdeets = getCookie("imcpref");
+    var userdeets = getCookie("readuser");
     if (userdeets != "") {
 	    var deets = userdeets.split("%-");
 		var user = deets[0];
-		var pref = deets[1];
-		namediv.innerHTML = "Welcome "+user + "<br>You prefer "+pref + " guitars.";
+		greeting.innerHTML = 'Welcome ' + user;
 	} else { return "";
   }
 }
@@ -27,21 +45,6 @@ function getCookie(cname) {
     return "";
 }
 
-function bakeCookie(cname, cvalue1, cvalue2, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toGMTString();
-    document.cookie = cname + "=" + cvalue1 + "%-" +cvalue2 + ";" + expires;
-}
-
-function mixCookie() {
-
- 	    var name = document.forms["form0"]["thename"].value;
-		var pref = document.forms["form0"]["gpref"].value;
-
-        bakeCookie("imcpref", name, pref, 365);
-			
-   }
 </script>
 </head>
 
@@ -49,7 +52,7 @@ function mixCookie() {
 
 <div id="namediv">
 	 Customer Name: 
-     <form name="form0" action="#" method="post">
+     <form name="form1" action="#" method="post">
       <input name="name" id="thename" type="text">\
 	  
     <div>Choose Your Favorite Guitar:</div>
