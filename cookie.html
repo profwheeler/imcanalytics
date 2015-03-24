@@ -31,6 +31,7 @@ function checkCookie() {
 		var user = deets[0];
 		namediv.innerHTML = '';
 		greeting.innerHTML = 'Welcome ' + user;
+		document.getElementById('deletecookie').style.display = "block";
 	} else { return "";
   }
 }
@@ -44,6 +45,11 @@ function getCookie(cname) {
         if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
     }
     return "";
+}
+
+function drop_cookie(name) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  location.reload();
 }
 
 </script>
@@ -66,6 +72,7 @@ function getCookie(cname) {
      </form>
     </div>  
 <div id="greeting"></div>	
+<div id="deletecookie" style="display:none;"><button onclick="drop_cookie('readuser');">Remove Cookie</button></div>
 
 
 </body>
