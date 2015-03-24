@@ -2,7 +2,7 @@
 	if(isset($_POST['name'])) {
 	     
 	     $UNAME = ($_POST['name']);
-		 $GREETING = 'Welcome back '. $UNAME.'.';
+		 $GREETING = 'Thank you '. $UNAME.'.';
 
 		 } else { 
 		 $GREETING = 'Welcome Guest. <a href="#" class="my_popup_open">Log on</a> for recommendations.'; 
@@ -12,6 +12,8 @@
 ?>
 
 <html>
+<!--THIS IS HTML COMMENT SYNTAX -->
+
  <head>
 
  
@@ -106,46 +108,13 @@
 
 <script language="JavaScript">
 
-function checkCookie() {
+//This is JS comment syntax.
+//cookie will go here.
 
-    var userdeets = getCookie("readuser");
-    if (userdeets != "") {
-	    var deets = userdeets.split("%-");
-		var user = deets[0];
-		greeting.innerHTML = 'Welcome ' + user;
-	} else { return "";
-  }
-}
-
-function getCookie(cname) {
-
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i].trim();
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return "";
-}
-
-function bakeCookie(cname, cvalue1, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toGMTString();
-    document.cookie = cname + "=" + cvalue1 + ";" + expires;
-}
-
-function mixCookie() {
-
- 	    var name = document.forms["form1"]["name"].value;
-
-        bakeCookie("readuser", name, 365);
-			
-   }
 </script>
 
  </head>
- <body onload="checkCookie()">
+ <body>
  <div style="width:100%; height:25%; background-color:#57585A;">
  <img src="img/ic1.jpg" style="max-height: 100%;">
     <div style="float:right; margin-right:75px;margin-top:10px; color:white;"> Cart: <?php echo $CARTCOUNT ?> </div>
@@ -158,14 +127,37 @@ function mixCookie() {
  <div id="cta1"> Please browse our options:</div>
  <section>
     <div id="one" style="padding:10px;">
-	Book One</div>
-    <div id="two" style="padding:10px;">
-	Book Two
+	<img src="img/Borges.jpg" style="float:left; margin-right:6px; height: 100px;">
+	<strong>Labyrinths</strong><p>
+	by Jorge Luis Borges<p>
+	If Jorge Luis Borges had been a computer scientist, he probably would have invented hypertext and the World Wide Web. 
+	Instead, being a librarian and one of the world's most widely read people, he became the leading practitioner of a densely 
+	layered imaginistic writing style that has been imitated throughout this century, but has no peer. </div>
+    
+	<div id="two" style="padding:10px;">
+	<img src="img/Lem.jpg" style="float:left; margin-right:6px; height: 100px;">
+	<strong>A Perfect Vacuum</strong><p>
+	by Stanislaw Lem<p>
+	In A Perfect Vacuum, Stanislaw Lem presents a collection of book reviews of nonexistent works of literature. Embracing 
+	postmodernism's "games for games' sake" ethos, Lem joins the contest with hilarious and grotesque results, lampooning 
+	the movement's self-indulgence and exploiting its mannerisms.
 	</div>
+	
 	<div id="three" style="padding:10px;">
-	Book Three</div>
-    <div id="four" style="padding:10px;">
-	Book Four
+	<img src="img/Zsmith.jpg" style="float:left; margin-right:6px; height: 100px;">
+	<strong>White Teeth</strong><p>
+	by Zadie Smith<p>
+	Epic and intimate, hilarious and poignant, White Teeth is the story of two North London families - one headed by Archie, 
+	the other by Archie's best friend, a Muslim Bengali named Samad Iqbal. Pals since they served together in World War II, 
+	Archie and Samad are a decidedly unlikely pair. </div>
+    
+	<div id="four" style="padding:10px;">
+	<img src="img/North.jpg" style="float:left; margin-right:6px; height: 100px;">
+	<strong>The First 15 Lives of Harry August</strong><p>
+	by Claire North<p>
+	Harry August is on his deathbed--again. No matter what he does or the decisions he makes, when death comes, Harry always 
+	returns to where he began, a child with all the knowledge of a life he has already lived a dozen times before. Nothing ever
+	changes--until now. 
 	</div>
 </section>
 
