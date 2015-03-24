@@ -29,6 +29,7 @@ function checkCookie() {
     if (userdeets != "") {
 	    var deets = userdeets.split("%-");
 		var user = deets[0];
+		namediv.innerHTML = '';
 		greeting.innerHTML = 'Welcome ' + user;
 	} else { return "";
   }
@@ -53,7 +54,7 @@ function getCookie(cname) {
 <div id="namediv">
 	 Customer Name: 
      <form name="form1" action="#" method="post">
-      <input name="name" id="thename" type="text">\
+      <input name="name" id="thename" type="text">
 	  
     <div>Choose Your Favorite Guitar:</div>
 	<select id="gpref">
@@ -64,6 +65,7 @@ function getCookie(cname) {
 	<button onclick="mixCookie();">Save Preference</button><p>
      </form>
     </div>  
+<div id="greeting"></div>	
 
 
 </body>
